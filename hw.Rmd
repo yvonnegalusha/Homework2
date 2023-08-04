@@ -1,0 +1,196 @@
+---
+title: "Homework 2"
+output: html_notebook
+---
+
+| Homework 2                     |               Data Programming in R |
+| :---                           |                                ---: |
+| Due by 11:59 PM on Wed Sep 7   | Business Analytics Graduate Program |
+| Submit via GitHub              |     BAIS:6060 Fall 2022 (Part-Time) |
+
+# Instructions
+
+This homework covers Module 2. Refer to the corresponding materials and
+ICE (with solutions) posted on ICON.
+
+To complete the homework, fill in the commands needed to finish all of
+the exercises below. Program everything inside this notebook and do not
+change the notebook's filename. If the exercises request that you store
+information within certain variables, use those specific variables names
+(case sensitive). This will assist in grading your homework in a timely
+manner.
+
+For notebooks in general:
+
+- Comment your code so that a classmate, for example, could easily
+follow along.
+
+- Load any required packages using the `library(...)` command.
+However, a notebook should *not* have any `install.packages(...)` or
+`update.packages()` commands.
+
+- Do not use the `View(...)` command in a notebook. Viewing a data
+frame should be done interactively using RStudio's console but is not
+recommended for a notebook that will be run by someone else.
+
+For homeworks in general:
+
+- Be careful not to alter any supplied data files. In particular, if you
+open a CSV file with Excel, do *not* save it with Excel.
+
+- Before turning in a homework, run your entire notebook by choosing
+*Run > Restart R and Run All Chunks* in the RStudio interface.
+Everything should work without error!
+
+- To turn in a homework, unless otherwise instructed, upload *only* your
+notebook to your corresponding GitHub repository. Please do not change
+the notebook's filename. GitHub overwrites the previous version of the
+file when you upload your version.
+
+- If given a data set, there is no need to upload that data set back
+into GitHub. Also, if your code generates any ouput files, such as an
+HTML file, a new data set, or an image, then there is no need to upload
+those files either.
+
+Also included with this homework are the solutions within the included
+file `soln.Rdata`. If you would like to see the solutions, execute
+this command in the console: `load("soln.Rdata", soln <- new.env())`.
+Then you can access the solutions within the object called `soln`. For
+example, `View(soln$df)` will show the contents of the correct data
+frame `df`. These are for your reference. The purpose of the homework is
+for you to create these solutions on your own. Points will be deducted
+if your turned-in notebook uses `soln.Rdata` in any way.
+
+# Exercises
+
+For exercises #1-8, carefully review the included files `fires.txt`
+(!), `fires.png`, and `fires.csv`. Exercises #9-11 use `mcd.csv`, which
+contains nutritional information for items on McDonald's menu.
+
+```{r}
+
+```
+
+## #1
+
+Read `fires.csv` into a data frame df according to the following table:
+
+    Input Column Name      Class                New Column Name
+    -----------------      -----                ---------------
+    alm_date               Date                 date
+    station                factor               (no change)
+    zip                    integer              zipcode
+    combined adress        character            address
+    latitude               numeric              (no change)
+    longitude              numeric              (no change)
+    inci_type              factor               incident_type_code
+    descript               character            incident_type
+    prop_use               factor               property_use_code
+    descript_b             character            property_use
+
+For all other columns that exist in the CSV file, either do not read
+them in or, if you do read them in, eliminate them afterwards. Note
+that, in R, `double` is synonymous with `numeric` but that `integer` is
+different than `numeric`.
+
+```{r}
+
+```
+
+## #2
+
+Remove all rows that have one or more pieces of missing of data.
+
+```{r}
+
+```
+
+## #3
+
+Alter the levels of `df$station` according to the following: "1"
+changes to "Downtown", "2" to "West", "3" to "Southeast", and "4" to
+"Northeast". [Hint: Please follow capitalization as shown.]
+
+```{r}
+
+```
+
+## #4
+
+Use `format(..., "%b")` as part of a single command to create a new
+column `df$month`, which contains the month in which the fire occurred.
+For example, the date `2012-03-13` would show as `Mar` in the new
+column. Also make `df$month` a factor.
+
+```{r}
+
+```
+
+## #5
+
+Create a new variable `df$east`, which is a factor with levels "1" if
+the station corresponds either to "Northeast" or "Southeast" and "0"
+otherwise.
+
+```{r}
+
+```
+
+## #6
+
+Remove all rows in which the zip code is *not* one of 52240, 52242,
+52245, or 52246. [Note: Why remove certain zip codes? These are the ones
+in which very few fires occurred.]
+
+```{r}
+
+```
+
+## #7
+
+Subset the data frame to keep only records with latitude measurements
+between 41.6 and 42.0 (inclusive) and longitude measurements between
+-91.75 and -91.45 (inclusive).
+
+```{r}
+
+```
+
+## #8
+
+Make sure the levels of the month column are sorted in the usual
+calendar order, i.e., "Jan", "Feb", ..., "Dec".
+
+```{r}
+
+```
+
+## #9
+
+Use `read_csv(...)` to read `mcd.csv` into a data frame called `food`.
+You can use all of defaults of `read_csv`.
+
+```{r}
+
+```
+
+## #10
+
+Assuming the daily requirement for calories is 2,000, create a new
+column called `CaloriesPerc` that gives the percentage of daily
+calories---on a scale of 0 to 100---contributed by a single serving of
+each item. Afterwards, delete the `Calories` column. [Hint: Do not round
+the result in `CaloriesPerc`.]
+
+```{r}
+
+```
+
+## #11
+
+Simultaneously reorder the contents of food in decreasing order of
+`CaloriesPerc` and then increasing order of `Protein`.
+
+```{r}
+
+```

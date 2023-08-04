@@ -1,0 +1,20 @@
+Data collected by the Iowa City Fire Department (ICFD) from Jan 2012 to
+Dec 2014. Each row corresponds to an alarm received by---and responded
+to---by the ICFD. Some of the columns are as follows:
+
+    alm_date        = date of alarm (in the format "%d-%b-%y")
+    station         = which fire station received the 
+    zip             = zip code of the street address of the incident 
+    combined adress = street address of incident
+    latitude        = latitude of location incident 
+    longitude       = longitude of location of incident
+    inci_type       = code for the type of incident
+    descript        = description for the type of incident
+    prop_use        = code for the property use at incident
+    descript_b      = description for the property use at incident (e.g., "1
+                      or 2 family dwelling")
+
+The empty string, "NA", and "0" represent NA's; in particular, "0" is
+used for unavailable or invalid latitude-longitude values.
+
+A map of the fire incidents is included for reference.
