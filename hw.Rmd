@@ -148,7 +148,7 @@ in which very few fires occurred.]
 
 ## #7
 
-Subset the data frame to keep only records with latitude measurements
+Filter the data frame to keep only records with latitude measurements
 between 41.6 and 42.0 (inclusive) and longitude measurements between
 -91.75 and -91.45 (inclusive).
 
@@ -159,7 +159,8 @@ between 41.6 and 42.0 (inclusive) and longitude measurements between
 ## #8
 
 Make sure the levels of the month column are sorted in the usual
-calendar order, i.e., "Jan", "Feb", ..., "Dec".
+calendar order, i.e., "Jan", "Feb", ..., "Dec". Then write df to
+a csv file called "fires_df.csv".
 
 ```{r}
 
@@ -189,7 +190,8 @@ the result in `CaloriesPerc`.]
 ## #11
 
 Simultaneously reorder the contents of food in decreasing order of
-`CaloriesPerc` and then increasing order of `Protein`.
+`CaloriesPerc` and then increasing order of `Protein`. Then write food
+data frame to a csv file called "food_df.csv".
 
 ```{r}
 
